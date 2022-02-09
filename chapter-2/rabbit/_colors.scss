@@ -1,0 +1,53 @@
+@each $key, $val in $colors {
+    .text-is-#{$key}{
+        color:$val;
+    }
+
+    .text-hover-#{$key}{
+        &:hover{
+            color:$val
+        }
+    }
+
+    .bg-is-#{$key}{
+        background-color:$val;
+    }
+    @if ($val != black and $val != white){
+        // Light variations
+        @for $level from 1 through 9{
+            .text-is-#{$key}-light-#{$level}{
+                color: mix(white,$val,$level * 10);
+            }
+            .text-hover-#{$key}-light-#{$level}{
+                &:hover{
+                    color:mix(white,$val,$level *10)
+                }
+            }
+        }
+
+        @for $level from 1 through 9{
+            .bg-is-#{$key}-light-#{$level}{
+                background: mix(white,$val,$level * 10);
+            }
+        }
+
+        // Dark variations
+        @for $level from 1 through 9{
+            .text-is-#{$key}-dark-#{$level}{
+                color: mix(black,$val,$level * 10);
+            }
+            .text-hover-#{$key}-dark-#{$level}{
+                &:hover{
+                    color:mix(black,$val,$level *10)
+                }
+            }
+        }
+
+        @for $level from 1 through 9{
+            .bg-is-#{$key}-dark-#{$level}{
+                background: mix(black,$val,$level * 10);
+            }
+
+        }
+    }
+}

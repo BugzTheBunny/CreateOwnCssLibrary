@@ -146,3 +146,4 @@ function watchTask() {
 /* This will run on save of index.sass */
 exports.default = series(buildStyles, watchTask) 
 ```
+The problem with this, is that when you save something, it will create also `variables.css` which will be empty and we don't need it, so all we need to do is add _ to the name of the variables file, and make it `_variables.scss`, that way it will know that the file is a partial, meaning it is used, but does not need to be compiled.

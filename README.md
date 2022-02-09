@@ -8,3 +8,10 @@
 
 - VSCode extention - `Live Sass Compiler`
 - NodeJS installed.
+
+
+Chapter 1 - Learning the basics.
+
+Chapter 2 - Building a CSS library and learning advanced features.
+
+Chapter 3 - Testing the library on a sample page.
